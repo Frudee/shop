@@ -1,15 +1,12 @@
 @import "vars";
+@import "header";
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Lato";
-  font-style: normal;
-  font-weight: 300;
-  font-size: 225px;
-  font-size: $mainFont;
-  line-height: 19px;
+  font-family: $fontFamily;
+  //   font-size: $mainFont;
 }
 
 .container {
@@ -18,27 +15,43 @@
   padding: 0 10px;
 }
 
-.header {
-  width: 100%;
-  background-color: #222222;
-  padding: 19px 0;
+.promo {
+  height: 764px;
+  background-color: #f1e4e6;
+  margin-bottom: 65px;
+  &__flex {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    background: url("../img/Man.png") no-repeat -228px;
+  }
+  &__title {
+    max-width: 445px;
+    border-left: 12px solid $highlight;
+    padding-left: 16px;
+  }
 }
 
-.header__flex {
-  color: white;
-  display: flex;
-  justify-content: space-between;
+.big-text {
+  font-style: bold;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 58px;
+  color: $darkColor;
 }
 
-.header__right {
-  display: flex;
-  align-items: center;
+.main-title-desc {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 38px;
 }
 
-.logo {
-  margin-right: 41px;
-}
-
-.header__item:not(:last-child) {
-  margin-right: 33px;
+.highlight {
+  color: #f16d7f;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 38px;
 }

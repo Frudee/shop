@@ -1,0 +1,25 @@
+.header {
+  width: 100%;
+  background-color: $darkColor;
+  padding: 19px 0;
+  li:first-child {
+    margin-right: 41px;
+  }
+  ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+  &__flex {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__right {
+    display: flex;
+    align-items: center;
+    li:not(:last-child) {
+      margin-right: 33px;
+    }
+  }
+}
