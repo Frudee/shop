@@ -6,3 +6,19 @@ html
             .category__item
                 p= text 
                 h3= title
+
+        mixin card (title, text, price, i)
+            .card
+                .card__img
+                    img(src=`../../img/Card${i}.png`, alt="product")
+                .card__body
+                    h3= title
+                    p= text 
+                    span= price
+        
+        mixin factor (title, text, q)
+            -for(let i = 0; i < q; i++)
+                .factor 
+                    img(src=`../../img/Factor${i+1}.png`, alt="factor")
+                    h3= title[i]
+                    p= text

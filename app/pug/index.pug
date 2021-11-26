@@ -26,3 +26,19 @@ html(lang="en")
                     +categoryItem('HOT DEAL', "FOR MEN")
                     +categoryItem('NEW ARRIVALS', 'FOR KIDS')
                     +categoryItem('LUXIROUS', 'ACCESSORIES')
+            //- Features
+            section.features 
+                .container.features__flex 
+                    .features__text 
+                        h2 Featured Items
+                        p Shop for items based on what we featured in this week
+                    .cards-container 
+                        - for(let i = 1; i < 7; i++) 
+                            +card("ELLERY X M'O CAPSULE", "Known for her sculptural\ takes on traditional tailoring,\
+                  Australian arbiter of cool Kym Ellery teams up with Moda\
+                  Operandi.", "$52.00", i)
+                button.btn.btn-center Browse All Product
+            //- Factors
+            section.factors 
+                .container.factors__flex
+                    +factor(['asdsa', '123123'], 'yo', 6)

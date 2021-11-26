@@ -1,0 +1,36 @@
+.card {
+  width: 360px;
+  height: 582px;
+  background-color: #f8f8f8;
+  img {
+    display: block;
+    margin: auto;
+  }
+  h3 {
+    margin-bottom: 12.65px;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 16px;
+    color: black;
+  }
+  p {
+    margin-bottom: 18px;
+    width: 314px;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    color: $greyColor;
+  }
+  span {
+    font-size: 16px;
+    line-height: 19px;
+    color: $highlight;
+  }
+  &__img {
+    background-color: #f7e4e2;
+    height: 420px;
+  }
+  &__body {
+    padding: 25px 18px 20px;
+  }
+}
