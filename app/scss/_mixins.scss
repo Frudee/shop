@@ -1,0 +1,8 @@
+@mixin bgImgLoop {
+  @for $i from 1 to 5 {
+    &:nth-child(#{$i}) {
+      background: linear-gradient(rgba(33, 22, 22, 0.7), rgba(33, 22, 22, 0.7)),
+        url(#{$imgPath}#{$i}.png);
+    }
+  }
+}

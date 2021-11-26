@@ -11,9 +11,18 @@ html(lang="en")
         include templates/_header.pug
 
         main 
+            //- Promo
             section.promo 
                 .container.promo__flex 
                     .promo__title 
                         h1
                             span.big-text THE BRAND 
-                            span.main-title-desc OF&nbsp;LUXERIOUS <span class="highlight">FASHION</span>
+                            span OF&nbsp;LUXERIOUS <span class="highlight">FASHION</span>
+            //- Category
+            section.category 
+                .container.category__flex
+                    include templates/_mixins.pug
+                    +categoryItem('30% OFF', 'FOR WOMEN')
+                    +categoryItem('HOT DEAL', "FOR MEN")
+                    +categoryItem('NEW ARRIVALS', 'FOR KIDS')
+                    +categoryItem('LUXIROUS', 'ACCESSORIES')

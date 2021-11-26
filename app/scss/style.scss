@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo&family=Lato:wght@400;900&display=swap");
 @import "vars";
 @import "header";
+@import "mixins";
 
 * {
   padding: 0;
@@ -15,10 +17,16 @@
   padding: 0 10px;
 }
 
+// Index page
+
 .promo {
   height: 764px;
   background-color: #f1e4e6;
   margin-bottom: 65px;
+  h1 {
+    font-size: 32px;
+    line-height: 38px;
+  }
   &__flex {
     display: flex;
     justify-content: flex-end;
@@ -34,24 +42,45 @@
 }
 
 .big-text {
-  font-style: bold;
   font-weight: 900;
   font-size: 48px;
   line-height: 58px;
   color: $darkColor;
 }
 
-.main-title-desc {
-  font-size: 32px;
-  font-weight: bold;
-  line-height: 38px;
+.highlight {
+  color: $highlight;
 }
 
-.highlight {
-  color: #f16d7f;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 32px;
-  line-height: 38px;
+.category {
+  p {
+    font-size: $mainFont;
+    text-align: center;
+    color: #ffffff;
+  }
+  h3 {
+    font-family: Lato;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: $highlight;
+  }
+  &__flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 96px;
+  }
+  &__item {
+    @include bgImgLoop;
+    width: 1140px;
+    height: 180px;
+    padding: 65px 490px;
+  }
+  &__item:not(:last-child) {
+    width: 360px;
+    height: 260px;
+    padding: 105px 103px;
+  }
 }
