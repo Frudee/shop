@@ -1,0 +1,20 @@
+.small-header {
+  padding: 59px 0 60px;
+  background-color: #f8f3f4;
+  h2 {
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: normal;
+    color: $highlight;
+  }
+  p {
+    align-self: center;
+    font-size: 14px;
+    line-height: 17px;
+    color: #9f9f9f;
+  }
+  &__flex {
+    display: flex;
+    justify-content: space-between;
+  }
+}

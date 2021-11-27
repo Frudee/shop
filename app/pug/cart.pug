@@ -8,5 +8,32 @@ html(lang="en")
         script(src="https://kit.fontawesome.com/f40149316f.js" crossorigin="anonymous") 
         title Cart
     body 
+        include templates/_mixins.pug
         //- Header
         include templates/_header.pug
+        main
+            //- Small Header
+            include templates/_smallHeader.pug
+            //- Cart
+            section.cart 
+                .container.cart__flex
+                    .cart-item-container 
+                        +cartItem(['MANGO  PEOPLE T-SHIRT', 'MANGO  PEOPLE  T-SHIRT'], ['300', '300'], 2)
+                        .cart-item__btns 
+                            button CLEAR SHOPPING CART
+                            button CONTINUE SHOPPING
+                    .form-checkout
+                        form(action="#")
+                            h3 SHIPPING ADDRESS
+                            select(name="City")
+                                option(value='' disabled selected) City
+                            input(type="text" placeholder="State")
+                            input(type="text" placeholder="Postcode / Zip")
+                            button.btn-quote GET A QUOTE
+                            .checkout 
+                                h4 SUB TOTAL <span>$900</span>
+                                h3 GRAND TOTAL <span>$900</span>
+                                button.btn-submit(type="submit") PROCEED TO CHECKOUT
+            include templates/_subscribe.pug
+            include templates/_footer.pug
+                

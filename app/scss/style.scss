@@ -4,6 +4,7 @@
 @import "footer";
 @import "mixins";
 @import "card";
+@import "smallHeader";
 
 * {
   padding: 0;
@@ -220,3 +221,147 @@
 }
 
 // Cart page
+
+.cart__flex {
+  display: flex;
+  justify-content: space-between;
+  padding: 96px 0 128px;
+}
+
+.cart-item-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.cart-item {
+  width: 652px;
+  height: 306px;
+  display: flex;
+  h3 {
+    width: 200px;
+    margin-bottom: 42px;
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: normal;
+    color: $darkColor;
+    white-space: initial;
+  }
+  span:not(:last-child) {
+    margin-bottom: 6px;
+  }
+  span {
+    font-size: 22px;
+    line-height: 26px;
+    color: #575757;
+  }
+  box-shadow: (17px 19px 24px rgba(0, 0, 0, 0.13));
+  &__text {
+    width: 262px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 22px;
+    margin-left: 31px;
+  }
+  &__close {
+    padding: 28px 0 0 57px;
+    font-size: 28px;
+  }
+  &__btns {
+    display: flex;
+    justify-content: space-between;
+    button {
+      padding: 17px 41px 16px 39px;
+      border: 1px solid #a4a4a4;
+      cursor: pointer;
+      margin-top: 32px;
+      background-color: white;
+      font-size: 14px;
+      line-height: 17px;
+    }
+  }
+  i {
+    width: 18px;
+    display: block;
+  }
+  .highlight {
+    color: $highlight;
+  }
+
+  .qty {
+    border: 1px solid #eaeaea;
+    margin-left: 24px;
+    padding: 2px 16px;
+  }
+}
+
+.form-checkout {
+  width: 360px;
+  padding-top: 22px;
+  h3 {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    color: $darkishColor;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 11px;
+    line-height: 13px;
+    color: #4a4a4a;
+    .btn-quote {
+      margin-top: 3px;
+      padding: 10px 12px;
+      width: 101px;
+      font-size: 11px;
+      line-height: 13px;
+      color: #4a4a4a;
+      border: 1px solid #a4a4a4;
+      cursor: pointer;
+    }
+    .checkout {
+      text-align: right;
+      padding: 40px 43px 42px 44px;
+      background-color: #f5f3f3;
+      h4 {
+        margin-bottom: 12px;
+        font-weight: normal;
+        font-size: 11px;
+        line-height: 13px;
+        color: #4a4a4a;
+        span {
+          margin-left: 26px;
+        }
+      }
+      h3 {
+        margin-bottom: 39px;
+        font-size: 16px;
+        line-height: 19px;
+        span {
+          color: $highlight;
+          margin-left: 26px;
+        }
+      }
+      button {
+        padding: 15px 42px 16px 41px;
+        display: block;
+        margin: auto;
+        color: white;
+        background-color: $highlight;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        line-height: 19px;
+      }
+    }
+  }
+  select {
+    appearance: none;
+    @include form-input;
+  }
+  input {
+    @include form-input;
+  }
+}

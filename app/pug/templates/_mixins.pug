@@ -24,3 +24,18 @@ html
                     img(src=`../../img/Factor${i+1}.png`, alt="factor")
                     h3= title[i]
                     p= text
+
+        mixin cartItem (title, price, q)
+            -for (let i = 0; i < q; i++)
+                .cart-item 
+                    .cart-item__img
+                        img(src=`../../img/cart/Cart${i+1}.jpg`, alt="cart img")                 
+                    .cart-item__text 
+                        h3= title[i]
+                        span!= `Price: <span class="highlight">${'$' + price[i]}</span> `
+                        span Color: Red
+                        span Size: XL
+                        span Quantity: <span class="qty">2</span>
+                    .cart-item__close 
+                        <i class="fas fa-times"></i>
+
