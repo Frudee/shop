@@ -7,6 +7,13 @@
   }
 }
 
+@mixin text($color, $fontSize, $line, $align) {
+  color: $color;
+  font-size: $fontSize;
+  text-align: $align;
+  line-height: $line;
+}
+
 @mixin flex-wrap {
   display: flex;
   flex-wrap: wrap;
