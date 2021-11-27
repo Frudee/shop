@@ -2,19 +2,21 @@ html
     head 
     body 
 
-        mixin categoryItem (text,title)
-            .category__item
-                p= text 
-                h3= title
+        mixin categoryItem (text,title, q)
+            - for(let i = 0; i < q; i++)
+                .category__item
+                    p= text[i]
+                    h3= title[i]
 
-        mixin card (title, text, price, i)
-            .card
-                .card__img
-                    img(src=`../../img/Card${i}.png`, alt="product")
-                .card__body
-                    h3= title
-                    p= text 
-                    span= price
+        mixin card (title, text, price, q)
+            - for(let i = 1; i < q + 1; i++) 
+                .card
+                    .card__img
+                        img(src=`../../img/Card${i}.png`, alt="product")
+                    .card__body
+                        h3= title
+                        p= text 
+                        span= price
         
         mixin factor (title, text, q)
             -for(let i = 0; i < q; i++)

@@ -1,0 +1,31 @@
+.footer {
+  background: #222224;
+  padding: 24px 0 23px;
+  &__flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    p {
+      display: block;
+      color: #fbfbfb;
+    }
+  }
+  &__left {
+    height: 100%;
+  }
+}
+
+.social {
+  display: flex;
+  gap: 7.29px;
+  i {
+    margin: auto;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    width: 31.45px;
+    height: 32px;
+    background-color: white;
+  }
+}

@@ -4,6 +4,7 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        script(src="https://kit.fontawesome.com/f40149316f.js" crossorigin="anonymous") 
         link(rel="stylesheet", href="css/style.min.css")
         title Document
     body 
@@ -22,10 +23,7 @@ html(lang="en")
             section.category 
                 .container.category__flex
                     include templates/_mixins.pug
-                    +categoryItem('30% OFF', 'FOR WOMEN')
-                    +categoryItem('HOT DEAL', "FOR MEN")
-                    +categoryItem('NEW ARRIVALS', 'FOR KIDS')
-                    +categoryItem('LUXIROUS', 'ACCESSORIES')
+                    +categoryItem(['30% OFF', 'HOT DEAL', 'NEW ARRIVALS', 'LUXIROUS'], ['FOR WOMEN', "FOR MEN", 'FOR KIDS', 'ACCESSORIES'], 4)
             //- Features
             section.features 
                 .container.features__flex 
@@ -33,12 +31,16 @@ html(lang="en")
                         h2 Featured Items
                         p Shop for items based on what we featured in this week
                     .cards-container 
-                        - for(let i = 1; i < 7; i++) 
-                            +card("ELLERY X M'O CAPSULE", "Known for her sculptural\ takes on traditional tailoring,\
+                        +card("ELLERY X M'O CAPSULE", "Known for her sculptural\ takes on traditional tailoring,\
                   Australian arbiter of cool Kym Ellery teams up with Moda\
-                  Operandi.", "$52.00", i)
+                  Operandi.", "$52.00", 6)
                 button.btn.btn-center Browse All Product
             //- Factors
             section.factors 
                 .container.factors__flex
-                    +factor(['asdsa', '123123', 'jjjjj'], 'yo', 6)
+                    +factor(['Free Delivery', 'Sales & discounts', 'Quality\ assurance'], 'Worldwide delivery on everything.\ Authoritively\ morph\
+              next-generation innovation with extensive models.', 3)
+            //- Subscribe
+            include templates/_subscribe.pug
+            //- Footer
+            include templates/_footer.pug

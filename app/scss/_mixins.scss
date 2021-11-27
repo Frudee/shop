@@ -6,3 +6,9 @@
     }
   }
 }
+
+@mixin flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
