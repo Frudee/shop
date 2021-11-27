@@ -1,10 +1,9 @@
 .footer {
-  background: #222224;
+  background: $darkishColor;
   padding: 24px 0 23px;
   &__flex {
-    display: flex;
+    @include flex-center;
     justify-content: space-between;
-    align-items: center;
     p {
       display: block;
       color: #fbfbfb;
@@ -22,8 +21,7 @@
     margin: auto;
   }
   &__item {
-    display: flex;
-    align-items: center;
+    @include flex-center;
     width: 31.45px;
     height: 32px;
     background-color: white;
