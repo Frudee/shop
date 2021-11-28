@@ -52,10 +52,10 @@ mixin smallHeader (title, p = 0)
             if (p)
                 p HOME / MEN / <span class="highlight">NEW ARRIVALS </span>
 
-mixin sort(one, two, three, four)
+mixin sort (one, two, three, four)
     .sort 
         details.sort__filter
-            summary= one
+            summary.custom-sum= one 
         .sort__items 
             details
                 summary= two 
@@ -63,3 +63,9 @@ mixin sort(one, two, three, four)
                 summary= three 
             details 
                 summary= four
+
+mixin pages (n) 
+    - for (let i = 0; i < n; i++)
+        nav.pagination 
+            ul 
+                li <a href="#">#{i+1}</a>

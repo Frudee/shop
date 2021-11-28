@@ -14,5 +14,19 @@ html(lang="en")
         //- Small header
         +smallHeader('NEW ARRIVALS', 1)
         main 
-            section.sort-section 
-                +sort('asd', 'asdasd', 'wwwww', 'yyyyy')
+            section.sort-section.mb-65.mt-50
+                .container
+                    +sort('FILTER', 'TRENDING NOW', 'SIZE', 'PRICE')
+            section.catalog 
+                .container.cards-container
+                    +card("ELLERY X M'O CAPSULE", "Known for her sculptural\ takes on traditional tailoring,\
+                  Australian arbiter of cool Kym Ellery teams up with Moda\
+                  Operandi.", "$52.00", 9)
+                    +pages(9)
+            section.factors 
+                .container.factors__flex 
+                    +factor(['Free Delivery', 'Sales & discounts', 'Quality\ assurance'], 'Worldwide delivery on everything.\ Authoritively\ morph\
+              next-generation innovation with extensive models.', 3) 
+            include templates/_subscribe.pug 
+            include templates/_footer.pug 
+

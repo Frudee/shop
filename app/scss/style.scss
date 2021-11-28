@@ -335,3 +335,73 @@
     @include form-input;
   }
 }
+
+// Catalog page
+
+.sort {
+  display: flex;
+  &__filter {
+    flex: 1;
+    padding-left: 15px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    .custom-sum::after {
+      height: 5px;
+      content: url("../../img/catalog/Filter.png");
+      padding-left: 10px;
+      padding-bottom: 12px;
+    }
+    // &[open]:after {
+    //   content: url("../../img/catalog/Filter.png");
+    // }
+  }
+  &__items {
+    font-size: 14px;
+    display: flex;
+    flex: 2;
+  }
+  summary {
+    @include flex-center;
+    list-style: none;
+    margin-right: 28px;
+    &::-webkit-details-marker {
+      display: none;
+    }
+    &::after {
+      height: 5px;
+      content: url("../../img/catalog/Arrow.png");
+      padding-left: 10px;
+      padding-bottom: 14px;
+    }
+  }
+  // details[open] summary:after {
+  //   content: url("../../img/catalog/Arrow.png");
+  // }
+}
+
+.pagination__list {
+  display: flex;
+  list-style: none;
+}
+
+.page__item:not(:nth-child(9), :nth-child(7)) {
+  margin-right: 21px;
+}
+
+.page__arrow {
+  color: black;
+  font-weight: bold;
+}
+
+.page__link {
+  color: #c4c4c4;
+}
+
+.page__item_lt {
+  margin-right: 17.8px;
+}
+
+.page__item_rt {
+  margin-left: 17.8px;
+}
