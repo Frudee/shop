@@ -4,15 +4,25 @@ mixin categoryItem (text,title, q)
             p= text[i]
             h3= title[i]
 
-mixin card (title, text, price, q)
-    - for(let i = 1; i < q + 1; i++) 
-        .card
-            .card__img
-                img(src=`../../img/Card${i}.png`, alt="product")
-            .card__body
-                h3= title
-                p= text 
-                span= price
+mixin card (title, text, price, q, img = 0)
+    if (!img)
+        - for(let i = 1; i < q + 1; i++) 
+            .card
+                .card__img
+                    img(src=`../../img/Card${i}.png`, alt="product")
+                .card__body
+                    h3= title
+                    p= text 
+                    span= price
+    else 
+        - for(let i = 1; i < q + 1; i++) 
+            .card
+                .card__img
+                    img(src=`../../img/Card${img[i-1]}.png`, alt="product")
+                .card__body
+                    h3= title
+                    p= text 
+                    span= price
 
 mixin factor (title, text, q)
     -for(let i = 0; i < q; i++)
@@ -35,3 +45,21 @@ mixin cartItem (title, price, q)
             .cart-item__close 
                 <i class="fas fa-times"></i>
 
+mixin smallHeader (title, p = 0)
+    section.small-header
+        .container.small-header__flex
+            h2= title
+            if (p)
+                p HOME / MEN / <span class="highlight">NEW ARRIVALS </span>
+
+mixin sort(one, two, three, four)
+    .sort 
+        details.sort__filter
+            summary= one
+        .sort__items 
+            details
+                summary= two 
+            details
+                summary= three 
+            details 
+                summary= four
