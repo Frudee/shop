@@ -15,14 +15,32 @@ mixin card (title, text, price, q, img = 0)
                     p= text 
                     span= price
     else 
+        //- - for(let i = 1; i < q + 1; i++) 
+        //-     .card
+        //-         .card__img
+        //-             img(src=`../../img/Card${img[i-1]}.png`, alt="product")
+        //-         .card__body
+        //-             h3= title
+        //-             p= text 
+        //-             span= price   
+        //- correct above
         - for(let i = 1; i < q + 1; i++) 
-            .card
-                .card__img
-                    img(src=`../../img/Card${img[i-1]}.png`, alt="product")
-                .card__body
-                    h3= title
-                    p= text 
-                    span= price
+            if (i > 6)
+                .card
+                    .card__img
+                        img(src=`../../img/catalog/CatCard${[i]}.png`, alt="product")
+                    .card__body
+                        h3= title
+                        p= text 
+                        span= price
+            else                
+                .card
+                    .card__img
+                        img(src=`../../img/Card${[i]}.png`, alt="product")
+                    .card__body
+                        h3= title
+                        p= text 
+                        span= price
 
 mixin factor (title, text, q)
     -for(let i = 0; i < q; i++)
@@ -65,7 +83,11 @@ mixin sort (one, two, three, four)
                 summary= four
 
 mixin pages (n) 
-    - for (let i = 0; i < n; i++)
-        nav.pagination 
-            ul 
+    nav.pagination 
+        <i class="fas fa-chevron-left" ></i>
+        ul 
+            - for (let i = 0; i < n; i++)
                 li <a href="#">#{i+1}</a>
+            li <a href="#">.....</a>
+            li <a href="#">20</a>
+        <i class="fas fa-chevron-right"></i>
