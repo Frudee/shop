@@ -4,34 +4,47 @@ mixin categoryItem (text,title, q)
             p= text[i]
             h3= title[i]
 
-mixin card (title, text, price, q, img)
-    if (!img)
-        - for(let i = 1; i < q + 1; i++) 
-            .card
-                .card__img
-                    img(src=`../../img/Card${i}.png`, alt="product")
-                .card__body
-                    h3= title
-                    p= text 
-                    span= price
+mixin card (title, text, price, q, img, spec)
+    if (spec)
+        - for(let i = 1; i < q + 1; i++)
+            a(href="../product.html")  
+                .card
+                    .card__img
+                        img(src=`../../img/Card${img[i-1]}.png`, alt="product")
+                    .card__body
+                        h3= title
+                        p= text 
+                        span= price
+    if (!img && !spec)
+        - for(let i = 1; i < q + 1; i++)
+            a(href="../product.html")  
+                .card
+                    .card__img
+                        img(src=`../../img/Card${i}.png`, alt="product")
+                    .card__body
+                        h3= title
+                        p= text 
+                        span= price
     else 
         - for(let i = 1; i < q + 1; i++) 
-            if (img.includes(i))
-                .card
-                    .card__img
-                        img(src=`../../img/catalog/CatCard${[i]}.png`, alt="product")
-                    .card__body
-                        h3= title
-                        p= text 
-                        span= price
-            else                
-                .card
-                    .card__img
-                        img(src=`../../img/Card${[i]}.png`, alt="product")
-                    .card__body
-                        h3= title
-                        p= text 
-                        span= price
+            if (!spec && img.includes(i))
+                a(href="../product.html") 
+                    .card
+                        .card__img
+                            img(src=`../../img/catalog/CatCard${[i]}.png`, alt="product")
+                        .card__body
+                            h3= title 
+                            p= text 
+                            span= price
+            else if (!spec)
+                a(href="../product.html")                
+                    .card
+                        .card__img
+                            img(src=`../../img/Card${[i]}.png`, alt="product")
+                        .card__body
+                            h3= title + 'ss'
+                            p= text 
+                            span= price
 
 mixin factor (title, text, q)
     -for(let i = 0; i < q; i++)
