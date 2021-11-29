@@ -16,7 +16,7 @@ html(lang="en")
         main 
             section.sort-section.mb-65.mt-50
                 .container
-                    +sort('FILTER', 'TRENDING NOW', 'SIZE', 'PRICE')
+                    +sort(true, 3, ['TRENDING NOW', 'SIZE', 'PRICE'], ['FILTER'])
             section.catalog 
                 .container.cards-container
                     +card("ELLERY X M'O CAPSULE", "Known for her sculptural\ takes on traditional tailoring,\
