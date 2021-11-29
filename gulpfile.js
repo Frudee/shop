@@ -90,7 +90,7 @@ const cleanDist = () => {
 const watching = () => {
   watch(["app/pug/**/*.pug"], pugTemplate);
   watch(["app/scss/**/*.scss"], styles);
-  watch(["app/js/**/*.js"], scripts);
+  watch(["app/js/**/*.js", "!app/js/main.min.js"], scripts);
 };
 
 exports.default = parallel(scripts, pugTemplate, styles, browsersync, watching);

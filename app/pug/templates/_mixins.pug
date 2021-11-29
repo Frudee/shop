@@ -4,7 +4,7 @@ mixin categoryItem (text,title, q)
             p= text[i]
             h3= title[i]
 
-mixin card (title, text, price, q, img = 0)
+mixin card (title, text, price, q, img)
     if (!img)
         - for(let i = 1; i < q + 1; i++) 
             .card
@@ -15,17 +15,8 @@ mixin card (title, text, price, q, img = 0)
                     p= text 
                     span= price
     else 
-        //- - for(let i = 1; i < q + 1; i++) 
-        //-     .card
-        //-         .card__img
-        //-             img(src=`../../img/Card${img[i-1]}.png`, alt="product")
-        //-         .card__body
-        //-             h3= title
-        //-             p= text 
-        //-             span= price   
-        //- correct above
         - for(let i = 1; i < q + 1; i++) 
-            if (i > 6)
+            if (img.includes(i))
                 .card
                     .card__img
                         img(src=`../../img/catalog/CatCard${[i]}.png`, alt="product")
