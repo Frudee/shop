@@ -2,7 +2,7 @@
   width: 100%;
   background-color: $darkColor;
   padding: 19px 0;
-  li:first-child {
+  &__item:first-child {
     margin-right: 41px;
   }
   ul {
@@ -18,13 +18,8 @@
   &__right {
     display: flex;
     align-items: center;
-    li:not(:last-child) {
+    .header__item:not(:last-child) {
       margin-right: 33px;
     }
   }
-}
-
-// Dropdown
-
-.dropdown {
 }

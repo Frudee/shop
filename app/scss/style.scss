@@ -3,8 +3,9 @@
 @import "mixins";
 @import "header";
 @import "footer";
-@import "card";
-@import "smallHeader";
+@import "components/card";
+@import "components/smallHeader";
+@import "components/dropdown";
 @import "margins";
 
 * {
