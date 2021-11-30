@@ -63,7 +63,7 @@
 // Open animation
 @keyframes fade-in {
   0% {
-    transform: translateY(-20px);
+    transform: translateY(-22px);
     opacity: 0;
   }
   100% {
@@ -79,6 +79,6 @@
   }
   100% {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-22px);
   }
 }
