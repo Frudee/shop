@@ -1,5 +1,24 @@
 .dropdown {
+  details.summary-closing[open] .dropdown-wrapper {
+    animation: fade-out 0.5s forwards;
+  }
+  details[open] {
+    .dropdown-wrapper {
+      animation: fade-in 0.5s forwards;
+    }
+  }
+  .bigger {
+    position: relative;
+  }
+  .bigger:after {
+    content: "";
+    padding: 25px;
+    position: absolute;
+    left: 0;
+    top: 25px;
+  }
   summary {
+    cursor: pointer;
     list-style: none;
     &::-webkit-details-marker {
       display: none;
@@ -8,16 +27,22 @@
   &-wrapper {
     position: absolute;
     width: 232px;
+    height: $promo-height;
     background-color: white;
     top: 79px;
     color: $darkColor;
     text-align: left;
+    box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
     h3 {
-      margin-left: 34px;
-      margin-top: 37px;
+      margin: 37px 0 25px 34px;
     }
     h4 {
-      margin-left: 34px;
+      margin: 0 0 12px 34px;
+      @include text($highlight, 14px, 17px, "");
+      font-weight: normal;
+      &:not(:first-of-type) {
+        margin-top: 20px;
+      }
     }
   }
   ul {
@@ -28,5 +53,32 @@
   }
   li {
     margin-left: 55px;
+  }
+  a {
+    text-decoration: none;
+    color: #6f6e6e;
+  }
+}
+
+// Open animation
+@keyframes fade-in {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+// Close animation
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
   }
 }
