@@ -105,9 +105,19 @@ mixin smallHeader (title, p = 0)
 
 mixin sort (filter = false, q, str, filterStr)
     if (filter)
-        .sort 
-            details.sort__filter
-                summary.custom-sum= filterStr 
+        .sort.dropdown 
+            details.sort__filter.dropdown__det
+                summary.custom-sum.dropdown__sum= filterStr
+                .dropdown-wrapper
+                    h3 Category 
+                    ul 
+                        li Item
+                        li Item
+                        li Item
+                        li Item
+                        li Item
+                        li Item
+                        li Item
             .sort__items
                 - for (let i = 0; i < q; i++) 
                     details

@@ -27,6 +27,7 @@
   }
   &-wrapper {
     position: absolute;
+    z-index: 100;
     width: 232px;
     height: $promo-height;
     background-color: white;
