@@ -4,6 +4,9 @@ mixin categoryItem (text,title, q)
             p= text[i]
             h3= title[i]
 
+mixin addCartBtn ()
+    button.mt-50.cart-btn <i class="fas fa-shopping-cart"></i> Add to cart
+
 mixin card (title, text, price, q, img, spec)
     if (spec)
         - for(let i = 1; i < q + 1; i++)
@@ -11,20 +14,32 @@ mixin card (title, text, price, q, img, spec)
                 .card
                     .card__img
                         img(src=`../../img/Card${img[i-1]}.png`, alt="product")
+                        .overlay 
+                            .overlay__text 
+                                button.mt-50.cart-btn 
+                                    span.cart-btn__text <i class="fas fa-shopping-cart"></i>                                        
+                                    span.cart-btn__text Add to Cart              
                     .card__body
                         h3= title
                         p= text 
                         span= price
+                    
     if (!img && !spec)
         - for(let i = 1; i < q + 1; i++)
             a(href="../product.html")  
                 .card
                     .card__img
                         img(src=`../../img/Card${i}.png`, alt="product")
+                        .overlay 
+                                .overlay__text 
+                                    button.mt-50.cart-btn 
+                                        span.cart-btn__text <i class="fas fa-shopping-cart"></i>                                        
+                                        span.cart-btn__text Add to Cart  
                     .card__body
                         h3= title
                         p= text 
                         span= price
+                    
     else 
         - for(let i = 1; i < q + 1; i++) 
             if (!spec && img.includes(i))
@@ -32,19 +47,31 @@ mixin card (title, text, price, q, img, spec)
                     .card
                         .card__img
                             img(src=`../../img/catalog/CatCard${[i]}.png`, alt="product")
+                            .overlay 
+                                .overlay__text 
+                                    button.mt-50.cart-btn 
+                                        span.cart-btn__text <i class="fas fa-shopping-cart"></i>                                        
+                                        span.cart-btn__text Add to Cart  
                         .card__body
                             h3= title 
                             p= text 
                             span= price
+                        
             else if (!spec)
                 a(href="../product.html")                
                     .card
                         .card__img
                             img(src=`../../img/Card${[i]}.png`, alt="product")
+                            .overlay 
+                                .overlay__text 
+                                    button.mt-50.cart-btn 
+                                        span.cart-btn__text <i class="fas fa-shopping-cart"></i>                                        
+                                        span.cart-btn__text Add to Cart  
                         .card__body
-                            h3= title + 'ss'
+                            h3= title
                             p= text 
                             span= price
+                        
 
 mixin factor (title, text, q)
     -for(let i = 0; i < q; i++)
@@ -66,6 +93,8 @@ mixin cartItem (title, price, q)
                 span Quantity: <span class="qty">2</span>
             .cart-item__close 
                 <i class="fas fa-times"></i>
+
+
 
 mixin smallHeader (title, p = 0)
     section.small-header
