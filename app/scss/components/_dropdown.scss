@@ -28,12 +28,11 @@
   &-wrapper {
     position: absolute;
     z-index: 100;
-    width: 232px;
-    height: $promo-height;
+
     background-color: white;
-    top: 79px;
+
     color: $darkColor;
-    text-align: left;
+
     box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
     h3 {
       margin: 37px 0 25px 34px;
@@ -59,6 +58,18 @@
   a {
     text-decoration: none;
     color: #6f6e6e;
+  }
+  .dropdown-wrapper_menu {
+    width: 232px;
+    height: $promo-height;
+    top: 79px;
+    text-align: left;
+  }
+  .dropdown-wrapper_filter {
+    width: 360px;
+  }
+  .dropdown-wrapper_sort {
+    width: 79px;
   }
 }
 
