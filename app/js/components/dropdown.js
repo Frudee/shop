@@ -4,7 +4,9 @@ const dropdown = () => {
   const details = document.querySelector(".dropdown__det");
   const dropdownWrapper = document.querySelector(".dropdown-wrapper");
   let timeout = false;
-
+  const someArr = document.querySelectorAll(".dropdown__sum");
+  const otherArr = document.querySelectorAll(".dropdown__det");
+  console.log(someArr, otherArr);
   ///// ON MOUSE ENTER
   const detailsEnter = (event) => {
     details.setAttribute("open", "open");
