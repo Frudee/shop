@@ -10,10 +10,10 @@ mixin addCartBtn ()
 mixin card (title, text, price, q, img, spec)
     if (spec)
         - for(let i = 1; i < q + 1; i++)
-            a(href="../product.html")  
                 .card
                     .card__img
-                        img(src=`../../img/Card${img[i-1]}.png`, alt="product")
+                        a(href="../product.html") 
+                            img(src=`../../img/Card${img[i-1]}.png`, alt="product")
                         .overlay 
                             .overlay__text 
                                 button.mt-50.cart-btn 
@@ -26,10 +26,10 @@ mixin card (title, text, price, q, img, spec)
                     
     if (!img && !spec)
         - for(let i = 1; i < q + 1; i++)
-            a(href="../product.html")  
                 .card
                     .card__img
-                        img(src=`../../img/Card${i}.png`, alt="product")
+                        a(href="../product.html") 
+                            img(src=`../../img/Card${i}.png`, alt="product")
                         .overlay 
                                 .overlay__text 
                                     button.mt-50.cart-btn 
@@ -43,10 +43,10 @@ mixin card (title, text, price, q, img, spec)
     else 
         - for(let i = 1; i < q + 1; i++) 
             if (!spec && img.includes(i))
-                a(href="../product.html") 
                     .card
                         .card__img
-                            img(src=`../../img/catalog/CatCard${[i]}.png`, alt="product")
+                            a(href="../product.html")
+                                img(src=`../../img/catalog/CatCard${[i]}.png`, alt="product")
                             .overlay 
                                 .overlay__text 
                                     button.mt-50.cart-btn 
@@ -57,11 +57,11 @@ mixin card (title, text, price, q, img, spec)
                             p= text 
                             span= price
                         
-            else if (!spec)
-                a(href="../product.html")                
+            else if (!spec)           
                     .card
                         .card__img
-                            img(src=`../../img/Card${[i]}.png`, alt="product")
+                            a(href="../product.html") 
+                                img(src=`../../img/Card${[i]}.png`, alt="product")
                             .overlay 
                                 .overlay__text 
                                     button.mt-50.cart-btn 

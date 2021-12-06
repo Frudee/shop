@@ -1,5 +1,6 @@
 .cards-container {
-  @include flex-wrap;
+  display: flex;
+  flex-wrap: wrap;
   a {
     text-decoration: none;
   }
@@ -45,6 +46,10 @@
   }
   &:hover .overlay {
     opacity: 1;
+  }
+  &:nth-child(even) {
+    outline: 4px solid red;
+    margin-left: 2%;
   }
 }
 

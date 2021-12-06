@@ -39,9 +39,12 @@
 .big-text {
   @include text($darkColor, 48px, 58px, "");
   font-weight: 900;
-  font-size: 48px;
-  line-height: 58px;
-  color: $darkColor;
+}
+
+@media (max-width: 768px) {
+  .big-text {
+    @include text($darkColor, 44px, 53px, "");
+  }
 }
 
 .highlight {
