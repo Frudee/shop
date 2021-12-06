@@ -1,49 +1,50 @@
 const dropdown = () => {
   ///// GET ELEMENTS
-  const summary = document.querySelector(".dropdown__sum");
-  const details = document.querySelector(".dropdown__det");
-  const dropdownWrapper = document.querySelector(".dropdown-wrapper");
+  const sumArr = document.querySelectorAll(".dropdown__sum");
+  const detArr = document.querySelectorAll(".dropdown__det");
+  const dropdownWrapperArr = document.querySelectorAll(".dropdown-wrapper");
+
   let timeout = false;
-  const someArr = document.querySelectorAll(".dropdown__sum");
-  const otherArr = document.querySelectorAll(".dropdown__det");
-  console.log(someArr, otherArr);
+
   ///// ON MOUSE ENTER
-  const detailsEnter = (event) => {
-    details.setAttribute("open", "open");
-    details.classList.remove("summary-closing");
+  const detailsEnter = (event, i) => {
+    detArr[i].setAttribute("open", "open");
+    detArr[i].classList.remove("summary-closing");
     timeout = true;
-    event.target.classList.contains("dropdown__sum")
-      ? summary.classList.add("bigger")
+    event.target.classList.contains("sum_hover")
+      ? sumArr[i].classList.add("bigger")
       : "";
   };
   ///// ON MOUSE LEAVE
-  const detailsLeave = () => {
-    details.classList.add("summary-closing");
+  const detailsLeave = (i) => {
+    detArr[i].classList.add("summary-closing");
     timeout = false;
-    summary.classList.remove("bigger");
+    sumArr[i].classList.remove("bigger");
     setTimeout(() => {
       if (!timeout) {
-        details.removeAttribute("open");
-        details.classList.remove("summary-closing");
+        detArr[i].removeAttribute("open");
+        detArr[i].classList.remove("summary-closing");
       }
     }, 500);
   };
 
   ///// EVENT HANDLERS
-  summary.addEventListener("mouseenter", (event) => {
-    detailsEnter(event);
+  sumArr.forEach((el, i) => {
+    el.addEventListener("mouseenter", (event) => {
+      detailsEnter(event, i);
+    });
+    el.addEventListener("mouseleave", () => {
+      detailsLeave(i);
+    });
   });
 
-  dropdownWrapper.addEventListener("mouseenter", (event) => {
-    detailsEnter(event);
-  });
-
-  summary.addEventListener("mouseleave", () => {
-    detailsLeave();
-  });
-
-  dropdownWrapper.addEventListener("mouseleave", () => {
-    detailsLeave();
+  dropdownWrapperArr.forEach((el, i) => {
+    el.addEventListener("mouseenter", (event) => {
+      detailsEnter(event, i);
+    });
+    el.addEventListener("mouseleave", () => {
+      detailsLeave(i);
+    });
   });
 };
 

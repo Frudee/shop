@@ -3,6 +3,9 @@
     &:nth-child(#{$i}) {
       background: linear-gradient(rgba(33, 22, 22, 0.7), rgba(33, 22, 22, 0.7)),
         url(#{$imgPath}#{$i}.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
     }
   }
 }
