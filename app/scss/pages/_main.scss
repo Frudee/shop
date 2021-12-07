@@ -11,7 +11,7 @@
     @include flex-center;
     justify-content: flex-end;
     height: 100%;
-    background: url("../img/Man.png") no-repeat left;
+    background: url("../img/Man.png") no-repeat 10px;
     background-size: contain;
   }
   &__title {
@@ -29,13 +29,16 @@
       width: 283px;
     }
     &__flex {
-      // background-size: 100%;
-      // background-position: -150px;
-      background-size: contain;
       background-attachment: local;
     }
-    &__title {
-      // width: 283px;
+  }
+}
+
+@media (max-width: 420px) {
+  .promo {
+    &__flex {
+      background: none;
+      justify-content: center;
     }
   }
 }
@@ -67,7 +70,6 @@
     width: 32%;
     height: 260px;
     padding: 105px 0;
-    // padding: 105px 103px;
   }
 }
 @media (max-width: 768px) {
@@ -83,6 +85,19 @@
     }
   }
 }
+
+@media (max-width: 420px) {
+  .category {
+    &__item:nth-child(2) {
+      margin: 0;
+    }
+    &__item:not(:last-child) {
+      margin-bottom: 3%;
+      width: 100%;
+    }
+  }
+}
+
 .features {
   h2 {
     font-size: 30px;

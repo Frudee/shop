@@ -23,3 +23,16 @@
     }
   }
 }
+
+@media (max-width: 420px) {
+  .header {
+    &__right {
+      .header__item:not(:first-child) {
+        display: none;
+      }
+      .header__item:not(:last-child) {
+        margin-right: 0;
+      }
+    }
+  }
+}

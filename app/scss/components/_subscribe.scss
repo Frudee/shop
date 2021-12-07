@@ -49,6 +49,7 @@
   .subscribe {
     &__flex {
       flex-direction: column;
+      align-items: center;
     }
   }
 }

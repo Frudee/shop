@@ -11,6 +11,7 @@
   }
   &__left {
     height: 100%;
+    // order: 1;
   }
 }
 
@@ -35,5 +36,18 @@
   &__item:hover {
     background-color: $highlight;
     color: white;
+  }
+}
+
+@media (max-width: 420px) {
+  .footer {
+    padding: 43px 0 10px;
+    &__flex {
+      flex-direction: column;
+    }
+    &__left {
+      order: 2;
+      margin-top: 40px;
+    }
   }
 }

@@ -1,5 +1,6 @@
 .cards-container {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   a {
     text-decoration: none;
@@ -47,9 +48,49 @@
   &:hover .overlay {
     opacity: 1;
   }
-  &:nth-child(even) {
-    outline: 4px solid red;
-    margin-left: 2%;
+  &:nth-child(3n + 2) {
+    margin: 0 2.5%;
+    // outline: 4px solid red;
+  }
+  &:not(:nth-last-child(-n + 4)) {
+    margin-bottom: 2.5%;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    &:nth-child(3n + 2) {
+      margin: 0;
+    }
+    &:nth-child(2n) {
+      margin-left: 2%;
+    }
+    &:not(:nth-last-child(-n + 4)) {
+      margin-bottom: 0;
+    }
+    &:not(:nth-last-child(-n + 2)) {
+      margin-bottom: 2%;
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .card {
+    &:nth-child(3n + 2) {
+      margin: 0;
+    }
+    &:nth-child(2n) {
+      margin-left: 0;
+    }
+    &:not(:nth-last-child(-n + 4)) {
+      margin-bottom: 0;
+    }
+    &:not(:nth-last-child(-n + 2)) {
+      margin-bottom: 0;
+    }
+    &:not(:last-child) {
+      margin-bottom: 3%;
+    }
   }
 }
 
