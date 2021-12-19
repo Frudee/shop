@@ -6,6 +6,7 @@ const browserSync = require("browser-sync").create();
 const uglify = require("gulp-uglify-es").default;
 const imagemin = require("gulp-imagemin");
 const pug = require("gulp-pug");
+const del = require("del");
 
 // Pug
 
