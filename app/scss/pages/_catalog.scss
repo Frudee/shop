@@ -1,0 +1,68 @@
+// Catalog page
+
+.sort {
+  display: flex;
+  &__filter {
+    flex: 1;
+    padding-left: 15px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    .custom-sum::after {
+      height: 5px;
+      content: url("../../img/catalog/Filter.png");
+      padding-left: 10px;
+      padding-bottom: 12px;
+    }
+  }
+  &__items {
+    font-size: 14px;
+    display: flex;
+    flex: 2;
+  }
+  summary {
+    @include flex-center;
+    // list-style: none;
+    margin-right: 28px;
+    &::-webkit-details-marker {
+      display: none;
+    }
+    &::after {
+      height: 5px;
+      content: url("../../img/catalog/Arrow.png");
+      padding-left: 10px;
+      padding-bottom: 14px;
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  width: 284px;
+  border: 1px solid #ebebeb;
+  border-radius: 4px;
+  margin: 29px auto 115px;
+  padding: 15px 16px 15px 16px;
+  font-size: 16px;
+  line-height: 19px;
+  ul {
+    display: flex;
+    list-style: none;
+    li:not(:nth-child(7), :nth-child(6), :nth-child(8)) {
+      margin-right: 21px;
+    }
+    li:first-child {
+      margin-left: 17.8px;
+    }
+    li:last-child {
+      margin-right: 17.8px;
+    }
+    a {
+      text-decoration: none;
+      color: #c4c4c4;
+    }
+    a:hover {
+      color: $highlight;
+    }
+  }
+}

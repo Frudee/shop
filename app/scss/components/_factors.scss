@@ -1,0 +1,45 @@
+.factors {
+  background-color: $darkishColor;
+  padding: 103px 0 104px;
+  &__flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+@media (max-width: 768px) {
+  .factors {
+    padding: 48px 0 64px;
+    &__flex {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+.factor {
+  color: #fbfbfb;
+  width: 360px;
+  text-align: center;
+  img {
+    @include block-center;
+    margin-bottom: 28px;
+    min-height: 40px;
+  }
+  h3 {
+    font-size: 20px;
+    line-height: $mdFont;
+  }
+  p {
+    @include text("", 14px, 17px, center);
+    margin-top: 16px;
+    max-width: 360px;
+  }
+}
+@media (max-width: 768px) {
+  .factor {
+    &:not(:last-child) {
+      margin-bottom: 7%;
+    }
+  }
+}

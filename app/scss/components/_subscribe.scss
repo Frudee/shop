@@ -1,0 +1,65 @@
+.subscribe {
+  background-image: url(../img/Footer.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $darkishColor;
+  padding: 97px 0 156px;
+  h3 {
+    @include text("", 18px, 167.2%, center);
+    max-width: 557px;
+    font-weight: normal;
+    span {
+      font-weight: bold;
+      font-size: $mdFont;
+      display: block;
+    }
+  }
+  input {
+    width: 256px;
+    min-height: 49px;
+    border: none;
+    padding: 7px 64px 6px 22px;
+    background: #e1e1e1;
+    border-top-left-radius: 25%55px;
+    border-bottom-left-radius: 25%55px;
+  }
+  button {
+    min-width: 100px;
+    min-height: 49px;
+    background: $highlight;
+    color: white;
+    border: none;
+    padding: 7px 7px 6px 8px;
+    border-top-right-radius: 25%25px;
+    border-bottom-right-radius: 25%25px;
+    margin-left: -4px;
+    cursor: pointer;
+  }
+  &__flex {
+    display: flex;
+    justify-content: space-between;
+  }
+  &-form {
+    @include flex-center;
+    flex-direction: column;
+    max-width: 557px;
+  }
+}
+@media (max-width: 768px) {
+  .subscribe {
+    &__flex {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+.quote {
+  text-align: center;
+  max-width: 360px;
+  p {
+    @include text($darkishColor, 20px, 24px, center);
+    margin-top: 30px;
+    max-width: 360px;
+  }
+}

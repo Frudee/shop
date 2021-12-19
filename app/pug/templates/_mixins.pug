@@ -4,15 +4,74 @@ mixin categoryItem (text,title, q)
             p= text[i]
             h3= title[i]
 
-mixin card (title, text, price, q)
-    - for(let i = 1; i < q + 1; i++) 
-        .card
-            .card__img
-                img(src=`../../img/Card${i}.png`, alt="product")
-            .card__body
-                h3= title
-                p= text 
-                span= price
+mixin addCartBtn ()
+    button.mt-50.cart-btn <i class="fas fa-shopping-cart"></i> Add to cart
+
+mixin card (title, text, price, q, img, spec)
+    if (spec)
+        - for(let i = 1; i < q + 1; i++)
+                .card
+                    .card__img
+                        a(href="../product.html") 
+                            img(src=`../../img/Card${img[i-1]}.png`, alt="product")
+                        .overlay 
+                            .overlay__text 
+                                button.mt-50.cart-btn 
+                                    span.cart-btn__text <i class="fas fa-shopping-cart"></i>                                        
+                                    span.cart-btn__text Add to Cart              
+                    .card__body
+                        h3= title
+                        p= text 
+                        span= price
+                    
+    if (!img && !spec)
+        - for(let i = 1; i < q + 1; i++)
+                .card
+                    .card__img
+                        a(href="../product.html") 
+                            img(src=`../../img/Card${i}.png`, alt="product")
+                        .overlay 
+                                .overlay__text 
+                                    button.mt-50.cart-btn 
+                                        span.cart-btn__text <i class="fas fa-shopping-cart"></i>                                        
+                                        span.cart-btn__text Add to Cart  
+                    .card__body
+                        h3= title
+                        p= text 
+                        span= price
+                    
+    else 
+        - for(let i = 1; i < q + 1; i++) 
+            if (!spec && img.includes(i))
+                    .card
+                        .card__img
+                            a(href="../product.html")
+                                img(src=`../../img/catalog/CatCard${[i]}.png`, alt="product")
+                            .overlay 
+                                .overlay__text 
+                                    button.mt-50.cart-btn 
+                                        span.cart-btn__text <i class="fas fa-shopping-cart"></i>                                        
+                                        span.cart-btn__text Add to Cart  
+                        .card__body
+                            h3= title 
+                            p= text 
+                            span= price
+                        
+            else if (!spec)           
+                    .card
+                        .card__img
+                            a(href="../product.html") 
+                                img(src=`../../img/Card${[i]}.png`, alt="product")
+                            .overlay 
+                                .overlay__text 
+                                    button.mt-50.cart-btn 
+                                        span.cart-btn__text <i class="fas fa-shopping-cart"></i>                                        
+                                        span.cart-btn__text Add to Cart  
+                        .card__body
+                            h3= title
+                            p= text 
+                            span= price
+                        
 
 mixin factor (title, text, q)
     -for(let i = 0; i < q; i++)
@@ -35,3 +94,53 @@ mixin cartItem (title, price, q)
             .cart-item__close 
                 <i class="fas fa-times"></i>
 
+
+
+mixin smallHeader (title, p = 0)
+    section.small-header
+        .container.small-header__flex
+            h2= title
+            if (p)
+                p HOME / MEN / <span class="highlight">NEW ARRIVALS </span>
+
+mixin sort (filter = false, q, str, filterStr)
+    if (filter)
+        .sort.dropdown 
+            details.sort__filter.dropdown__det
+                summary.custom-sum.dropdown__sum= filterStr
+                .dropdown-wrapper.dropdown-wrapper_filter
+                    h3 Category 
+                    ul 
+                        li Item
+                        li Item
+                        li Item
+                        li Item
+                        li Item
+                        li Item
+                        li Item
+            .sort__items.dropdown
+                - for (let i = 0; i < q; i++) 
+                    details.dropdown__det
+                        summary.custom-sum.dropdown__sum= str[i]
+                        .dropdown-wrapper.dropdown-wrapper_sort
+                            ul 
+                                li XS
+                                li S
+                                li SM 
+                                li L
+    if (!filter)
+        .sort 
+            .sort__items 
+                - for (let i = 0; i < q; i++) 
+                    details
+                        summary= str[i] 
+
+mixin pages (n) 
+    nav.pagination 
+        <i class="fas fa-chevron-left" ></i>
+        ul 
+            - for (let i = 0; i < n; i++)
+                li <a href="#">#{i+1}</a>
+            li <a href="#">.....</a>
+            li <a href="#">20</a>
+        <i class="fas fa-chevron-right"></i>

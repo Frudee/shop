@@ -1,0 +1,64 @@
+// Product page
+.slider {
+  img {
+    max-width: 100%;
+    z-index: -1;
+  }
+  &__flex {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.product {
+  z-index: 1;
+  background-color: white;
+  outline: 1px solid #eaeaea;
+  max-width: 1138px;
+  padding: 65px 0;
+  @include flex-center;
+  flex-direction: column;
+  justify-content: center;
+  h3 {
+    @include text(#4d4d4d, 18px, 22px, "");
+    margin-bottom: 48px;
+    font-weight: 300;
+  }
+  h4 {
+    @include text($highlight, 14px, 17px, "");
+    font-weight: 300;
+  }
+  p {
+    @include text(#5e5e5e, 14px, 17px, center);
+    margin-bottom: 32px;
+    width: 565px;
+  }
+  span {
+    @include text($highlight, 24px, 29px, "");
+  }
+  button {
+    @include btn(#ff6a6a, #ff6a6a);
+    @include text(#ff6a6a, $mainFont, 19px, "");
+    background-color: #ffffff;
+    padding: 14.5px 57px 14.5px 24px;
+  }
+  i {
+    margin-right: 23px;
+  }
+  hr {
+    width: 642px;
+    color: #eaeaea;
+    background-color: #eaeaea;
+    height: 1px;
+    border-width: 0;
+    border: none;
+    margin: 65px 0;
+  }
+}
+
+.pline {
+  margin: 12px 0 27px;
+  width: 63px;
+  height: 3px;
+  background-color: #ef5b70;
+}

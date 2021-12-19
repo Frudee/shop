@@ -1,0 +1,36 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        script(src="https://kit.fontawesome.com/f40149316f.js" crossorigin="anonymous") 
+        link(rel="stylesheet", href="css/style.min.css")
+        title Product
+    body 
+        include templates/_mixins.pug
+        //- Header
+        include templates/_header.pug
+        +smallHeader('NEW ARRIVALS', true)
+        main
+            section.top 
+                .slider.slider__flex 
+                    img(src="../../img/product/Slider.jpg", alt="slider")
+            section.product-desc.mb-128.overflow
+                .container.product
+                    h4 WOMEN COLLECTION 
+                    .pline 
+                    h3 MOSCHINO CHEAP AND CHIC
+                    p Compellingly actualize fully researched processes before proactive outsourcing. Progressively syndicate collaborative architectures before cutting-edge services. Completely visualize parallel core competencies rather than exceptional portals.
+                    span $561
+                    hr
+                    +sort(false, 3, ['CHOOSE COLOR', 'CHOOSE SIZE ', 'QUANTITY'])
+                    +addCartBtn
+            section.mb-128
+                .container.cards-container 
+                    +card("ELLERY X M'O CAPSULE", "Known for her sculptural\ takes on traditional tailoring,\
+                    Australian arbiter of cool Kym Ellery teams up with Moda\
+                    Operandi.", "$52.00", 3, [4, 3, 6], true)
+            include templates/_subscribe.pug
+            include templates/_footer.pug
+        script(type="module" src="js/main.min.js") 

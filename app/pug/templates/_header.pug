@@ -2,20 +2,43 @@ header.header
     .container.header__flex
         .header__left
             ul
-                li 
+                li.header__item 
                     a(href='../../index.html')
-                        img(src='../img/Logo.png' alt='logo')
-                li 
-                    a(href="#")
+                        img(src='../app/img/Logo.png' alt='logo')
+                li.header__item
+                    a(href="../../catalog.html")
                         img(src='../img/Search.png' alt='Search')
         .header__right
             ul
-                li
-                    a(href="#")
-                        img(src='../img/Menu.png' alt='logo')
-                li
+                li.header__item
+                    .dropdown
+                        details.dropdown__det
+                            summary.dropdown__sum.sum_hover <img src='../img/Menu.png' alt='Search'>
+                            .dropdown-wrapper.dropdown-wrapper_menu
+                                h3 MENU
+                                h4 MAN
+                                ul
+                                    li  <a href="#">Menu item</a>
+                                    li  <a href="#">Menu item</a>
+                                    li  <a href="#">Menu item</a>
+                                    li  <a href="#">Menu item</a>
+                                h4 WOMAN
+                                ul
+                                    li  <a href="#">Menu item</a>
+                                    li  <a href="#">Menu item</a>
+                                    li  <a href="#">Menu item</a>
+                                    li  <a href="#">Menu item</a>
+                                h4 KIDS 
+                                ul
+                                    li  <a href="#">Menu item</a>
+                                    li  <a href="#">Menu item</a>
+                                    li  <a href="#">Menu item</a>
+                                    li  <a href="#">Menu item</a>
+                                    li  <a href="#">Menu item</a>
+                                    li  <a href="#">Menu item</a>
+                li.header__item
                     a(href="#")
                         img(src='../img/Account.png' alt='Account')
-                li
+                li.header__item
                     a(href="../../cart.html")
                         img(src='../img/Cart.png' alt='Cart')

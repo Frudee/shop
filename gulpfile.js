@@ -6,6 +6,7 @@ const browserSync = require("browser-sync").create();
 const uglify = require("gulp-uglify-es").default;
 const imagemin = require("gulp-imagemin");
 const pug = require("gulp-pug");
+const del = require("del");
 
 // Pug
 
@@ -90,9 +91,9 @@ const cleanDist = () => {
 const watching = () => {
   watch(["app/pug/**/*.pug"], pugTemplate);
   watch(["app/scss/**/*.scss"], styles);
-  watch(["app/js/**/*.js"], scripts);
+  watch(["app/js/**/*.js", "!app/js/main.min.js"], scripts);
 };
 
 exports.default = parallel(scripts, pugTemplate, styles, browsersync, watching);
-exports.build = series(cleanDist, build);
+exports.build = series(cleanDist, build, images);
 exports.images = series(images);

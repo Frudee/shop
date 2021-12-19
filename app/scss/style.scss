@@ -1,11 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Heebo&family=Lato:wght@400;900&display=swap");
-@import "vars";
-@import "mixins";
-@import "header";
-@import "footer";
-@import "card";
-@import "smallHeader";
-@import "margins";
+////// HELPERS
+@import "helpers/vars";
+@import "helpers/mixins";
+@import "helpers/margins";
+@import "helpers/dropdown";
+////// COMPONENTS
+@import "components/header";
+@import "components/footer";
+@import "components/card";
+@import "components/smallHeader";
+@import "components/factors";
+@import "components/subscribe";
+////// PAGES
+@import "pages/main.scss";
+@import "pages/cart.scss";
+@import "pages/catalog.scss";
+@import "pages/product.scss";
 
 * {
   padding: 0;
@@ -19,317 +29,24 @@
   margin: 0 auto;
   padding: 0 10px;
 }
-
-// Index page
-
-.promo {
-  height: 764px;
-  background-color: #f1e4e6;
-  h1 {
-    font-size: 32px;
-    line-height: 38px;
-  }
-  &__flex {
-    @include flex-center;
-    justify-content: flex-end;
-    height: 100%;
-    background: url("../img/Man.png") no-repeat -228px;
-  }
-  &__title {
-    max-width: 445px;
-    border-left: 12px solid $highlight;
-    padding-left: 16px;
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 16px;
   }
 }
-
 .big-text {
   @include text($darkColor, 48px, 58px, "");
   font-weight: 900;
-  font-size: 48px;
-  line-height: 58px;
-  color: $darkColor;
+}
+
+@media (max-width: 768px) {
+  .big-text {
+    @include text($darkColor, 44px, 53px, "");
+  }
 }
 
 .highlight {
   color: $highlight;
-}
-
-.category {
-  p {
-    @include text(#ffffff, $mainFont, "", center);
-  }
-  h3 {
-    @include text($highlight, $mdFont, 29px, center);
-  }
-  &__flex {
-    @include flex-wrap;
-  }
-  &__item {
-    @include bgImgLoop;
-    width: 1140px;
-    height: 180px;
-    padding: 65px 490px;
-  }
-  &__item:not(:last-child) {
-    width: 360px;
-    height: 260px;
-    padding: 105px 103px;
-  }
-}
-
-.features {
-  h2 {
-    font-size: 30px;
-    line-height: 36px;
-    color: #222222;
-    margin-bottom: 6px;
-  }
-  p {
-    font-size: 14px;
-    line-height: 17px;
-    color: #9f9f9f;
-  }
-  &__text {
-    text-align: center;
-  }
-  .btn {
-    @include btn($btnColor, $btnBordColor);
-    min-width: 211px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    padding: 15px 39px 14px;
-    &-center {
-      @include block-center;
-    }
-  }
-}
-
-.cards-container {
-  @include flex-wrap;
-}
-
-.factors {
-  background-color: $darkishColor;
-  padding: 103px 0 104px;
-  &__flex {
-    @include flex-wrap;
-  }
-}
-
-.factor {
-  color: #fbfbfb;
-  width: 360px;
-  text-align: center;
-  img {
-    @include block-center;
-    margin-bottom: 28px;
-    min-height: 40px;
-  }
-  h3 {
-    font-size: 20px;
-    line-height: $mdFont;
-  }
-  p {
-    @include text("", 14px, 17px, center);
-    margin-top: 16px;
-    max-width: 360px;
-  }
-}
-
-.subscribe {
-  background-image: url(../img/Footer.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: $darkishColor;
-  h3 {
-    @include text("", 18px, 167.2%, center);
-    max-width: 557px;
-    font-weight: normal;
-    span {
-      font-weight: bold;
-      font-size: $mdFont;
-      display: block;
-    }
-  }
-  input {
-    width: 256px;
-    min-height: 49px;
-    border: none;
-    padding: 7px 64px 6px 22px;
-    background: #e1e1e1;
-    border-top-left-radius: 25%55px;
-    border-bottom-left-radius: 25%55px;
-  }
-  button {
-    min-width: 100px;
-    min-height: 49px;
-    background: $highlight;
-    color: white;
-    border: none;
-    padding: 7px 7px 6px 8px;
-    border-top-right-radius: 25%25px;
-    border-bottom-right-radius: 25%25px;
-    margin-left: -4px;
-    cursor: pointer;
-  }
-  &__flex {
-    display: flex;
-    justify-content: space-between;
-    padding: 97px 0 156px;
-  }
-  &-form {
-    @include flex-center;
-    flex-direction: column;
-    max-width: 557px;
-  }
-}
-
-.quote {
-  text-align: center;
-  max-width: 360px;
-  p {
-    @include text($darkishColor, 20px, 24px, center);
-    margin-top: 30px;
-    max-width: 360px;
-  }
-}
-
-// Cart page
-
-.cart__flex {
-  display: flex;
-  justify-content: space-between;
-  padding: 96px 0 128px;
-}
-
-.cart-item-container {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.cart-item {
-  width: 652px;
-  height: 306px;
-  display: flex;
-  h3 {
-    width: 200px;
-    margin-bottom: 42px;
-    font-size: $mdFont;
-    line-height: 29px;
-    font-weight: normal;
-    color: $darkColor;
-    white-space: initial;
-  }
-  span:not(:last-child) {
-    margin-bottom: 6px;
-  }
-  span {
-    font-size: 22px;
-    line-height: 26px;
-    color: #575757;
-  }
-  box-shadow: (17px 19px 24px rgba(0, 0, 0, 0.13));
-  &__text {
-    width: 262px;
-    display: flex;
-    flex-direction: column;
-    padding-top: 22px;
-    margin-left: 31px;
-  }
-  &__close {
-    padding: 28px 0 0 57px;
-    font-size: 28px;
-  }
-  &__btns {
-    display: flex;
-    justify-content: space-between;
-    button {
-      @include btn("", #a4a4a4);
-      padding: 17px 41px 16px 39px;
-      margin-top: 32px;
-      background-color: white;
-      font-size: 14px;
-      line-height: 17px;
-    }
-  }
-  i {
-    width: 18px;
-    display: block;
-  }
-  .highlight {
-    color: $highlight;
-  }
-
-  .qty {
-    border: 1px solid #eaeaea;
-    margin-left: 24px;
-    padding: 2px 16px;
-  }
-}
-
-.form-checkout {
-  width: 360px;
-  padding-top: 22px;
-  h3 {
-    font-weight: 300;
-    font-size: $mainFont;
-    line-height: 19px;
-    color: $darkishColor;
-  }
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    font-size: 11px;
-    line-height: 13px;
-    color: #4a4a4a;
-    .btn-quote {
-      margin-top: 3px;
-      padding: 10px 12px;
-      width: 101px;
-      font-size: 11px;
-      line-height: 13px;
-      @include btn(#4a4a4a, #a4a4a4);
-    }
-    .checkout {
-      text-align: right;
-      padding: 40px 43px 42px 44px;
-      background-color: #f5f3f3;
-      h4 {
-        margin-bottom: 12px;
-        font-weight: normal;
-        font-size: 11px;
-        line-height: 13px;
-        color: #4a4a4a;
-        span {
-          margin-left: 26px;
-        }
-      }
-      h3 {
-        margin-bottom: 39px;
-        font-size: $mainFont;
-        line-height: 19px;
-        span {
-          color: $highlight;
-          margin-left: 26px;
-        }
-      }
-      button {
-        @include btn(white, "");
-        @include block-center;
-        padding: 15px 42px 16px 41px;
-        background-color: $highlight;
-        border: none;
-        font-size: $mainFont;
-        line-height: 19px;
-      }
-    }
-  }
-  select {
-    appearance: none;
-    @include form-input;
-  }
-  input {
-    @include form-input;
-  }
 }
