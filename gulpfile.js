@@ -95,5 +95,5 @@ const watching = () => {
 };
 
 exports.default = parallel(scripts, pugTemplate, styles, browsersync, watching);
-exports.build = series(cleanDist, build, images);
+exports.build = series(cleanDist, build);
 exports.images = series(images);
